@@ -623,8 +623,8 @@ function minimizePanel(p,save=true){if(!p)return;delete p.dataset.jmSectionSplas
       colour=mix(colour,wine,smoothstep(0.58,0.96,n1)*0.55);
       float motionField=exp(-dot(softD*vec2(0.84,0.78),softD*vec2(0.84,0.78))*2.4);
       float movementWake=u_motion*0.038*motionField*(0.72+0.28*n1);
-      float lingeringBloom=fadingField*u_fadeEnergy*0.62;
-      float alpha=clamp(field*energy*0.62+lingeringBloom+movementWake,0.0,0.34);
+      float lingeringBloom=fadingField*u_fadeEnergy*0.82;
+      float alpha=clamp(field*energy*0.62+lingeringBloom+movementWake,0.0,0.94);
       gl_FragColor=vec4(colour*alpha,alpha);
     }
   `;
